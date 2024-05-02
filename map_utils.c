@@ -12,3 +12,15 @@ int open_file(char *path)
     }
     return (fd);
 }
+
+t_counter   new_counter(void)
+{
+    t_counter   counter;
+
+    counter.empty = 0;
+    counter.collect = 0;
+    counter.exit = 0;
+    counter.movements = 0;
+    counter.start = 0;
+    return (counter);
+}

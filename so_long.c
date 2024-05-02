@@ -16,10 +16,10 @@ static int	count_char(const char *str, char c)
 	return (count);
 }
 
-/*static void	init_hook(t_game *game, int event, int mask, int (*f)())
+static void	init_hook(t_game *game, int event, int mask, int (*f)())
 {
 	mlx_hook(game->windows_ptr, event, mask, f, game);
-}*/
+}
 
 static void init_game(t_game *game, char *map)
 {

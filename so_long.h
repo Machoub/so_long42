@@ -32,6 +32,7 @@ typedef struct s_game
 {
     void    *mlx_ptr;
     void    *windows_ptr;
+    t_counter   i;
     t_draw  plot;
 }               t_game;
 
@@ -43,6 +44,14 @@ typedef struct s_draw
     int     lenght;
 }               t_draw;
 
+typedef struct s_counter
+{
+    int     empty;
+    int     collect;
+    int     exit;
+    int     start;
+    int     movements;
+}              t_counter;
 
 enum    e_state
 {

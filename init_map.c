@@ -14,7 +14,7 @@ static void read_map(t_game *game, int fd)
         tmp = ft_strjoin(tmp, game->plot.line);
         game->plot.height++;
     }
-    game->i = 
+    game->i = start_counter(tmp, game);
     game->plot.map = ft_split(tmp, '\n');
     free(tmp);
     return ;
