@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
+/*   Updated: 2024/05/03 13:59:45 by machouba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "minilibx-linux/mlx.h"
-#include "minilibx-linux/mlx_int.h"
-#include "libft/src/libft.h"
-#include "libft/src/ft_printf.h"
-#include <stdarg.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include "minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx_int.h"
+# include "libft/inc/libft.h"
+# include "libft/inc/ft_printf.h"
+# include "libft/inc/get_next_line.h"
+# include <stdarg.h>
+# include <stdbool.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # define SPR_SZ 64
 # define WINDOW_NAME "./so_long"
@@ -28,41 +41,52 @@
 # define EXPOSURE_MASK 32768
 # define NO_EVENT_MASK 0
 
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}			t_point;
+
 typedef struct s_game
 {
-    void    *mlx_ptr;
-    void    *windows_ptr;
-    t_counter   i;
-    t_draw  plot;
-}               t_game;
+	void		*mlx_ptr;
+	void		*windows_ptr;
+	t_skins		i;
+	t_draw		plot;
+}			t_game;
 
 typedef struct s_draw
 {
-    char    *line;
-    char    **map;
-    int     height;
-    int     lenght;
-}               t_draw;
+	char	*line;
+	char	**map;
+	int		height;
+	int		lenght;
+}			t_draw;
 
-typedef struct s_counter
+typedef struct s_skins
 {
-    int     empty;
-    int     collect;
-    int     exit;
-    int     start;
-    int     movements;
-}              t_counter;
+	int	empty;
+	int	collect;
+	int	exit;
+	int	start;
+	int	movements;
+}			t_skins;
 
-enum    e_state
+enum	e_state
 {
-    error = 2,
-    file_error = 3,
-    env_error = 7,
-
+	error = 2,
+	file_error = 3,
+	env_error = 7,
 };
 
-void    end_game(char *message, t_game *game, enum e_state i);
-int check_env(char **envp);
-void    init_map(t_game *game, char *path);
+void	end_game(char *message, t_game *game, enum e_state i);
+int		check_env(char **envp);
+void	init_map(t_game *game, char *path);
+t_skins	init_counter(void);
+int		open_file(char *path);
+bool	double_line(char *str, int i);
+void	is_items_valid(t_game *game, t_skins *items, char *str);
+int		len_map(char **map, t_game *game);
+void	free_map(t_game *game);
 
-# endif
+#endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/03 11:51:16 by machouba          #+#    #+#             */
+/*   Updated: 2024/05/03 11:53:30 by machouba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static int	count_char(const char *str, char c)
@@ -21,7 +33,7 @@ static void	init_hook(t_game *game, int event, int mask, int (*f)())
 	mlx_hook(game->windows_ptr, event, mask, f, game);
 }
 
-static void init_game(t_game *game, char *map)
+static void	init_game(t_game *game, char *map)
 {
 	init_map(game, map);
 	parsing_map(game);

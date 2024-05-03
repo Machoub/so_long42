@@ -6,7 +6,7 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:02:54 by machouba          #+#    #+#              #
-#    Updated: 2024/01/19 15:32:17 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/03 11:36:19 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ FTTO_DIR		=	$(SRC_DIR)/ft_atoi.c \
 
 FTSTR_DIR		=	$(SRC_DIR)/ft_split.c \
 					$(SRC_DIR)/ft_strchr.c \
-					$(SRC_DIR)/ft_strstr.c \
 					$(SRC_DIR)/ft_strdup.c \
 					$(SRC_DIR)/ft_striteri.c \
 					$(SRC_DIR)/ft_strjoin.c \
@@ -60,9 +59,11 @@ FTSTR_DIR		=	$(SRC_DIR)/ft_split.c \
 					$(SRC_DIR)/ft_strmapi.c \
 					$(SRC_DIR)/ft_strnstr.c \
 					$(SRC_DIR)/ft_strrchr.c \
-					$(SRC_DIR)/ft_strcmp.c	\
 					$(SRC_DIR)/ft_strtrim.c \
-					$(SRC_DIR)/ft_substr.c 
+					$(SRC_DIR)/ft_strcmp.c \
+					$(SRC_DIR)/ft_strstr.c \
+					$(SRC_DIR)/ft_substr.c \
+					$(SRC_DIR)/ft_free_tab.c \
 
 FTLST_DIR		=	$(SRC_DIR)/ft_lstadd_back.c \
 					$(SRC_DIR)/ft_lstadd_front.c \
@@ -82,8 +83,10 @@ FTPRINTF_DIR	=	$(SRC_DIR)/ft_printf.c \
 					$(SRC_DIR)/ft_putstr.c	\
 					$(SRC_DIR)/ft_putunbr.c \
 
+GNL_DIR			=	$(SRC_DIR)/get_next_line.c \
+					$(SRC_DIR)/get_next_line_utils.c \
 # Concatenate all source files
-SRC 			= $(FTIS_DIR) $(FTMEM_DIR) $(FTPUT_DIR) $(FTTO_DIR) $(FTTO_DIR) $(FTSTR_DIR) $(FTLST_DIR) $(FTPRINTF_DIR)
+SRC 			= $(FTIS_DIR) $(FTMEM_DIR) $(FTPUT_DIR) $(FTTO_DIR) $(FTTO_DIR) $(FTSTR_DIR) $(FTLST_DIR) $(FTPRINTF_DIR) $(GNL_DIR)
 
 # Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC))

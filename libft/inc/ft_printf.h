@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <limits.h>
-# include "../src/libft.h"
+# include "../inc/libft.h"
 
 int		ft_printf(const char *format, ...);
 int		ft_putchar(int c);
