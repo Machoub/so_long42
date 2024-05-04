@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/03 13:59:45 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/04 17:57:44 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ enum	e_state
 {
 	error = 2,
 	file_error = 3,
+	map_char_error = 4,
+	design_map_error = 5,
 	env_error = 7,
 };
 
@@ -88,5 +90,15 @@ bool	double_line(char *str, int i);
 void	is_items_valid(t_game *game, t_skins *items, char *str);
 int		len_map(char **map, t_game *game);
 void	free_map(t_game *game);
+bool	valid_character(t_game *game, int y, int x);
+void	parsing_map(t_game *game);
+bool	maps_walls(t_game *game, int y, int x);
+bool	rectangular(t_game *game, int y, int x);
+char	**copy_map(t_game *game, int y, int x);
+char	**alloc_map_mem(t_game *game, int y, int x);
+int		is_valid_pos(int i, int j, int y, int x);
+void	check_path_collect(t_game *game, t_point coord);
+void	check_path_player(t_game *game, t_point coord);
+void	free_map_test(char **map, int x);
 
 #endif

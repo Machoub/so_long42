@@ -6,11 +6,34 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:08:01 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/03 13:16:42 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/04 11:49:50 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+bool	valid_character(t_game *game, int y, int x)
+{
+	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
+		return (false);
+	return (true);	
+}
+
+bool	maps_walls(t_game *game, int y, int x)
+{
+	if ((game->plot.map[game->plot.height - 1][x] != 1)
+			|| (game->plot.map[0][x] != 1) || (game->plot.map[y][0] != 1)
+				|| (game->plot.map[y][game->plot.lenght - 1] != 1))
+			return (false);
+	return (true);
+}
+
+bool	rectangular(t_game *game, int y, int x)
+{
+	if (game->plot.lenght == game->plot.height)
+		return (false);
+	return (true);
+}
 
 void	is_items_valid(t_game *game, t_skins *items, char *str)
 {
