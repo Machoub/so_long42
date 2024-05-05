@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/04 17:57:44 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:11:00 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 # define DOWN 115
 # define RIGHT 100
 # define LEFT 97
-# define SPEED 1
 
 # define KEY_PRESS 02
 # define DESTROY_NOTIF 17
@@ -41,11 +40,32 @@
 # define EXPOSURE_MASK 32768
 # define NO_EVENT_MASK 0
 
+# define WALL "./img_xpm/wall.xpm"
+# define FLOOR "./img_xpm/floor.xpm"
+# define ITEM "./img_xpm/item.xpm"
+# define DJ_OPEN "./img_xpm/dj_open.xpm"
+# define DJ_CLOSE "./img_xpm/dj_close.xpm"
+# define PLAYER "./img_xpm/player.xpm"
+# define PLAYER_LEFT "./img_xpm/player_left.xpm"
+# define PLAYER_RIGHT "./img_xpm/player_right.xpm"
+# define PLAYER_UP "./img_xpm/player_up.xpm"
+
 typedef struct s_point
 {
 	int	x;
 	int	y;
 }			t_point;
+
+typedef struct s_img
+{
+	void	*ptr;
+	int		*pxl;
+	int		line_size;
+	int		mem;
+	int		x;
+	int		y;
+	int		mouv;
+}			t_img;
 
 typedef struct s_game
 {
@@ -53,6 +73,15 @@ typedef struct s_game
 	void		*windows_ptr;
 	t_skins		i;
 	t_draw		plot;
+	t_img		player;
+	t_img		player_left;
+	t_img		player_right;
+	t_img		player_upper;
+	t_img		floor;
+	t_img		wall;
+	t_img		item;
+	t_img		dj_open;
+	t_img		dj_close;
 }			t_game;
 
 typedef struct s_draw
@@ -74,11 +103,22 @@ typedef struct s_skins
 
 enum	e_state
 {
+	event_end = -1,
+	game_over = -1,
 	error = 2,
 	file_error = 3,
 	map_char_error = 4,
 	design_map_error = 5,
+	img_error = 6,
 	env_error = 7,
+};
+
+enum	e_dir
+{
+	up,
+	down,
+	left,
+	right,
 };
 
 void	end_game(char *message, t_game *game, enum e_state i);
@@ -100,5 +140,10 @@ int		is_valid_pos(int i, int j, int y, int x);
 void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
 void	free_map_test(char **map, int x);
+void	init_window(t_game *game);
+bool	not_window(t_game *game);
+t_point	get_screen_size(t_game *game);
+int		red_cross(t_game *game);
+void	init_img_nul(t_game *game);
 
 #endif
