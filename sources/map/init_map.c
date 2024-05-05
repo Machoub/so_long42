@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:38 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/03 13:51:44 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:14:48 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	count_items(t_skins *cnt, char c)
 		cnt->empty++;
 }
 
-static void	counter(char *str, t_game *game)
+static t_skins	counter(char *str, t_game *game)
 {
 	t_skins	items;
 	int		i;

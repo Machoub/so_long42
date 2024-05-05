@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/05 18:11:00 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:21:08 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,27 +123,44 @@ enum	e_dir
 
 void	end_game(char *message, t_game *game, enum e_state i);
 int		check_env(char **envp);
+void	destroy_img(t_game *game);
+void	free_map(t_game *game);
+
 void	init_map(t_game *game, char *path);
-t_skins	init_counter(void);
-int		open_file(char *path);
+
 bool	double_line(char *str, int i);
 void	is_items_valid(t_game *game, t_skins *items, char *str);
-int		len_map(char **map, t_game *game);
-void	free_map(t_game *game);
-bool	valid_character(t_game *game, int y, int x);
-void	parsing_map(t_game *game);
-bool	maps_walls(t_game *game, int y, int x);
 bool	rectangular(t_game *game, int y, int x);
+bool	maps_walls(t_game *game, int y, int x);
+bool	valid_character(t_game *game, int y, int x);
+
+int		len_map(char **map, t_game *game);
+t_skins	init_counter(void);
+int		open_file(char *path);
+void	end_game2(char *msg, t_game *game);
+
+void	parsing_map(t_game *game);
+
 char	**copy_map(t_game *game, int y, int x);
 char	**alloc_map_mem(t_game *game, int y, int x);
 int		is_valid_pos(int i, int j, int y, int x);
+
+void	free_map_test(char **map, int x);
 void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
-void	free_map_test(char **map, int x);
+
+
 void	init_window(t_game *game);
+t_img	new_sprite(t_game *game, char *img_xpm);
+void	init_img(t_game *game);
+
 bool	not_window(t_game *game);
 t_point	get_screen_size(t_game *game);
 int		red_cross(t_game *game);
 void	init_img_nul(t_game *game);
+
+void	render_map(t_game *game);
+
+int	key_check(int keycode, t_game *game);
 
 #endif
