@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:41 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/03 13:59:36 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:49:39 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,30 @@ int	check_env(char **envp)
 		return (1);
 }
 
+void	destroy_img(t_game *game)
+{
+	if (game)
+	{
+		if (game->wall.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->wall.ptr);
+		if (game->floor.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->floor.ptr);
+		if (game->item.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->item.ptr);
+		if (game->dj_close.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->dj_close.ptr);
+		if (game->dj_open.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->dj_open.ptr);
+		if (game->player.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->player.ptr);
+		mlx_destroy_window(game->mlx_ptr, game->windows_ptr);
+		mlx_destroy_display(game->mlx_ptr);
+		free_map(game);
+		free(game->mlx_ptr);
+	}
+	return ;
+}
+
 void	end_game(char *message, t_game *game, enum e_state i)
 {
 	if (i == env_error || i == error || i == file_error)
@@ -54,4 +78,23 @@ void	end_game(char *message, t_game *game, enum e_state i)
 		ft_printf("Error\n%s\n", message);
 		exit(1);
 	}
+	else if (i == img_error)
+	{
+		ft_printf("Error\n%s\n", message);
+		destroy_img(game);
+		exit(1);
+	}
+	else if (i == map_char_error || i == design_map_error)
+	{
+		free_map(game);
+		ft_printf("Error\n%s\n", message);
+		exit(1);
+	}
+	else if (i == event_end || i == game_over)
+	{
+		ft_printf("%s\n", message);
+		destroy_img(game);
+		exit(0);
+	}
+	end_game2(message, game);
 }
