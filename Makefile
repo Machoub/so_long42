@@ -6,7 +6,7 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 12:16:13 by machouba          #+#    #+#              #
-#    Updated: 2024/01/19 16:39:30 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/06 17:43:54 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,15 @@ LIB_MLX	=	$(MLX_PATH)/libmlx.a
 RM	=	rm -f
 AR	=	ar -rcs
 
-SOURCES = \
-	so_long.c \
-	end_game.c \
-	init_map.c \
+SOURCES = ./sources/
 
-	
-OBJECTS	= $(SOURCES:.c=.o)
+MAP = $(addprefix map/, correct_map.c init_map.c map_utils.c parsing_map.c path_utils.c path_valid.c)
+DISPLAY = $(addprefix aff/, display_utils.c display.c render_map.c)
+MOUV = $(addprefix mouv/, move_down.c move_up.c move_left.c move_right.c move_utils.c)
+GAME = $(addprefix $(SOURCES), $(MAP) $(DISPLAY) $(MOUV) so_long.c end_game.c)
+
+SRC = $(GAME)	
+OBJECTS	= $(SRC:%.c=%.o)
 
 all: $(NAME)
 

@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:41 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/05 18:49:39 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:53:31 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	free_map(t_game *game)
 {
@@ -78,7 +78,7 @@ void	end_game(char *message, t_game *game, enum e_state i)
 		ft_printf("Error\n%s\n", message);
 		exit(1);
 	}
-	else if (i == img_error)
+	else if (i == image_error)
 	{
 		ft_printf("Error\n%s\n", message);
 		destroy_img(game);

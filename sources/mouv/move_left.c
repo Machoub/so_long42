@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:00:16 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 16:15:27 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:41 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	is_left(t_game *game)
 {

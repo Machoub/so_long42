@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:33:03 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 16:35:56 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:34 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	is_down(t_game *game)
 {

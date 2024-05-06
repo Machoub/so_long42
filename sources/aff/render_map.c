@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:13 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:12:34 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:53:54 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	render_player(t_game *game)
 {

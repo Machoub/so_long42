@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:26 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/03 14:06:05 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:11 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	end_game2(char *msg, t_game *game)
 {
@@ -58,9 +58,9 @@ int	open_file(char *path)
 	return (fd);
 }
 
-t_skins	init_counter(void)
+t_skin	init_counter(void)
 {
-	t_skins	counter;
+	t_skin	counter;
 
 	counter.empty = 0;
 	counter.collect = 0;

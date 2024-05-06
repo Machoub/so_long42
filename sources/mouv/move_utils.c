@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:07:42 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 15:56:52 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:52 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	key_check(int keycode, t_game *game)
 {

@@ -6,19 +6,19 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:09 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:18:38 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:54:19 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-t_img	new_sprite(t_game *game, char *img_xpm)
+t_image	new_sprite(t_game *game, char *img_xpm)
 {
-	t_img	img;
+	t_image	img;
 
 	img.ptr = mlx_xpm_file_to_image(game->mlx_ptr, img_xpm, &img.x, &img.y);
 	if (img.ptr == NULL)
-		end_game("image failed", game, img_error);
+		end_game("image failed", game, image_error);
 	return (img);
 }
 

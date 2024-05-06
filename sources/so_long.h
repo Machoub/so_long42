@@ -6,18 +6,18 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:13:50 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:53:22 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "minilibx-linux/mlx.h"
-# include "minilibx-linux/mlx_int.h"
-# include "libft/inc/libft.h"
-# include "libft/inc/ft_printf.h"
-# include "libft/inc/get_next_line.h"
+# include "../minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx_int.h"
+# include "../libft/inc/libft.h"
+# include "../libft/inc/ft_printf.h"
+# include "../libft/inc/get_next_line.h"
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -40,15 +40,15 @@
 # define EXPOSURE_MASK 32768
 # define NO_EVENT_MASK 0
 
-# define WALL "./img_xpm/wall.xpm"
-# define FLOOR "./img_xpm/floor.xpm"
-# define ITEM "./img_xpm/item.xpm"
-# define DJ_OPEN "./img_xpm/dj_open.xpm"
-# define DJ_CLOSE "./img_xpm/dj_close.xpm"
-# define PLAYER "./img_xpm/player.xpm"
-# define PLAYER_LEFT "./img_xpm/player_left.xpm"
-# define PLAYER_RIGHT "./img_xpm/player_right.xpm"
-# define PLAYER_UP "./img_xpm/player_up.xpm"
+# define WALL "./imaget_image_xpm/wall.xpm"
+# define FLOOR "./imaget_image_xpm/floor.xpm"
+# define ITEM "./imaget_image_xpm/item.xpm"
+# define DJ_OPEN "./imaget_image_xpm/dj_open.xpm"
+# define DJ_CLOSE "./imaget_image_xpm/dj_close.xpm"
+# define PLAYER "./imaget_image_xpm/player.xpm"
+# define PLAYER_LEFT "./imaget_image_xpm/player_left.xpm"
+# define PLAYER_RIGHT "./imaget_image_xpm/player_right.xpm"
+# define PLAYER_UP "./imaget_image_xpm/player_up.xpm"
 
 typedef struct s_point
 {
@@ -56,7 +56,7 @@ typedef struct s_point
 	int	y;
 }			t_point;
 
-typedef struct s_img
+typedef struct s_image
 {
 	void	*ptr;
 	int		*pxl;
@@ -65,24 +65,16 @@ typedef struct s_img
 	int		x;
 	int		y;
 	int		mouv;
-}			t_img;
+}			t_image;
 
-typedef struct s_game
+typedef struct s_skin
 {
-	void		*mlx_ptr;
-	void		*windows_ptr;
-	t_skins		i;
-	t_draw		plot;
-	t_img		player;
-	t_img		player_left;
-	t_img		player_right;
-	t_img		player_upper;
-	t_img		floor;
-	t_img		wall;
-	t_img		item;
-	t_img		dj_open;
-	t_img		dj_close;
-}			t_game;
+	int	empty;
+	int	collect;
+	int	exit;
+	int	start;
+	int	movements;
+}		t_skin;
 
 typedef struct s_draw
 {
@@ -92,14 +84,22 @@ typedef struct s_draw
 	int		lenght;
 }			t_draw;
 
-typedef struct s_skins
+typedef struct s_game
 {
-	int	empty;
-	int	collect;
-	int	exit;
-	int	start;
-	int	movements;
-}			t_skins;
+	void		*mlx_ptr;
+	void		*windows_ptr;
+	t_skin		i;
+	t_draw		plot;
+	t_image		player;
+	t_image		player_left;
+	t_image		player_right;
+	t_image		player_upper;
+	t_image		floor;
+	t_image		wall;
+	t_image		item;
+	t_image		dj_open;
+	t_image		dj_close;
+}				t_game;
 
 enum	e_state
 {
@@ -109,7 +109,7 @@ enum	e_state
 	file_error = 3,
 	map_char_error = 4,
 	design_map_error = 5,
-	img_error = 6,
+	image_error = 6,
 	env_error = 7,
 };
 
@@ -123,19 +123,19 @@ enum	e_dir
 
 void	end_game(char *message, t_game *game, enum e_state i);
 int		check_env(char **envp);
-void	destroy_img(t_game *game);
+void	destroy_imaget_image(t_game *game);
 void	free_map(t_game *game);
 
 void	init_map(t_game *game, char *path);
 
 bool	double_line(char *str, int i);
-void	is_items_valid(t_game *game, t_skins *items, char *str);
-bool	rectangular(t_game *game, int y, int x);
+void	is_items_valid(t_game *game, t_skin *items, char *str);
+bool	rectangular(t_game *game);
 bool	maps_walls(t_game *game, int y, int x);
 bool	valid_character(t_game *game, int y, int x);
 
 int		len_map(char **map, t_game *game);
-t_skins	init_counter(void);
+t_skin	init_counter(void);
 int		open_file(char *path);
 void	end_game2(char *msg, t_game *game);
 
@@ -150,13 +150,13 @@ void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
 
 void	init_window(t_game *game);
-t_img	new_sprite(t_game *game, char *img_xpm);
-void	init_img(t_game *game);
+t_image	new_sprite(t_game *game, char *imaget_image_xpm);
+void	init_image(t_game *game);
 
 bool	not_window(t_game *game);
 t_point	get_screen_size(t_game *game);
 int		red_cross(t_game *game);
-void	init_img_nul(t_game *game);
+void	init_image_nul(t_game *game);
 
 void	render_map(t_game *game);
 void	player_init(t_game *game);

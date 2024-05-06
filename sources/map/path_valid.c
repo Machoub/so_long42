@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:05:48 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:12:08 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:29 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	valid_path_player(char **cpy_map, int i, int j, t_point coord)
 {

@@ -6,13 +6,13 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:38 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/05 19:14:48 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:03 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-static void	count_items(t_skins *cnt, char c)
+static void	count_items(t_skin *cnt, char c)
 {
 	if (c == 'C')
 		cnt->collect++;
@@ -24,9 +24,9 @@ static void	count_items(t_skins *cnt, char c)
 		cnt->empty++;
 }
 
-static t_skins	counter(char *str, t_game *game)
+static t_skin	counter(char *str, t_game *game)
 {
-	t_skins	items;
+	t_skin	items;
 	int		i;
 
 	i = 0;

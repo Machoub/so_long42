@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:08:01 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:01:45 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:48:06 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 bool	valid_character(t_game *game, int y, int x)
 {
@@ -28,14 +28,14 @@ bool	maps_walls(t_game *game, int y, int x)
 	return (true);
 }
 
-bool	rectangular(t_game *game, int y, int x)
+bool	rectangular(t_game *game)
 {
 	if (game->plot.lenght == game->plot.height)
 		return (false);
 	return (true);
 }
 
-void	is_items_valid(t_game *game, t_skins *items, char *str)
+void	is_items_valid(t_game *game, t_skin *items, char *str)
 {
 	if (!(items->collect > 0 && items->exit == 1 && items->start == 1
 			&& items->empty > 0))

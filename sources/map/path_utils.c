@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:02:44 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:04:22 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:22 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	is_valid_pos(int i, int j, int y, int x)
 {

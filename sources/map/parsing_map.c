@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:35:00 by khaoulasard       #+#    #+#             */
-/*   Updated: 2024/05/06 12:02:38 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:52:15 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	checker_map(t_game *game, int y, int x)
 {
