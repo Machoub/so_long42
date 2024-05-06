@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:16 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:23:17 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:58:27 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void	init_game(t_game *game, char *map)
 	render_map(game);
 	init_hook(game, KEY_PRESS, KEY_PRESS_MASK, key_check);
 	init_hook(game, DESTROY_NOTIF, NO_EVENT_MASK, red_cross);
+	init_hook(game, EXPOSE, EXPOSURE_MASK, mini_maker);
 	mlx_loop(game->mlx_ptr);
 }
 

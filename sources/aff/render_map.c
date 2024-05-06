@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:13 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:22:10 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:12:34 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,30 @@ static void	check_map_maker(t_game *game, int y, int x)
 			game->floor.ptr, (x * SPR_SZ), (y * SPR_SZ));
 }
 
+void	player_init(t_game *game)
+{
+	t_point	point;
+
+	point.y = 0;
+	while (game->plot.map[point.y])
+	{
+		point.x = 0;
+		while (game->plot.map[point.y][point.x])
+		{
+			if (game->plot.map[point.y][point.x] == 'P')
+			{
+				game->player.y = (point.y * SPR_SZ);
+				game->player.x = (point.x * SPR_SZ);
+				render_player(game);
+				return ;
+			}
+			point.x++;
+		}
+		point.y++;
+	}
+	return ;
+}
+
 void	render_map(t_game *game)
 {
 	t_point	point;
@@ -58,4 +82,24 @@ void	render_map(t_game *game)
 		point.y++;
 	}
 	return ;
+}
+
+int	mini_maker(t_game *game)
+{
+	render_map(game);
+	if (game->i.movements == 0)
+		player_init(game);
+	else if (game->player.mem == down)
+		mlx_put_image_to_window(game->mlx_ptr, game->windows_ptr,
+			game->player.ptr, game->player.x, game->player.y);
+	else if (game->player.mem == up)
+		mlx_put_image_to_window(game->mlx_ptr, game->windows_ptr,
+			game->player_upper.ptr, game->player_upper.x, game->player_upper.y);
+	else if (game->player.mem == left)
+		mlx_put_image_to_window(game->mlx_ptr, game->windows_ptr,
+			game->player_left.ptr, game->player_left.x, game->player_left.y);
+	else if (game->player.mem == right)
+		mlx_put_image_to_window(game->mlx_ptr, game->windows_ptr,
+			game->player_right.ptr, game->player_right.x, game->player_right.y);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 16:37:43 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:13:50 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,8 @@ int		red_cross(t_game *game);
 void	init_img_nul(t_game *game);
 
 void	render_map(t_game *game);
+void	player_init(t_game *game);
+int		mini_maker(t_game *game);
 
 int		key_check(int keycode, t_game *game);
 void	move_down(t_game *game);
