@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:53:22 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:56:35 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,43 +125,33 @@ void	end_game(char *message, t_game *game, enum e_state i);
 int		check_env(char **envp);
 void	destroy_imaget_image(t_game *game);
 void	free_map(t_game *game);
-
 void	init_map(t_game *game, char *path);
-
 bool	double_line(char *str, int i);
 void	is_items_valid(t_game *game, t_skin *items, char *str);
 bool	rectangular(t_game *game);
 bool	maps_walls(t_game *game, int y, int x);
 bool	valid_character(t_game *game, int y, int x);
-
 int		len_map(char **map, t_game *game);
 t_skin	init_counter(void);
 int		open_file(char *path);
 void	end_game2(char *msg, t_game *game);
-
 void	parsing_map(t_game *game);
-
 char	**copy_map(t_game *game, int y, int x);
 char	**alloc_map_mem(t_game *game, int y, int x);
 int		is_valid_pos(int i, int j, int y, int x);
-
 void	free_map_test(char **map, int x);
 void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
-
 void	init_window(t_game *game);
 t_image	new_sprite(t_game *game, char *imaget_image_xpm);
 void	init_image(t_game *game);
-
 bool	not_window(t_game *game);
 t_point	get_screen_size(t_game *game);
 int		red_cross(t_game *game);
 void	init_image_nul(t_game *game);
-
 void	render_map(t_game *game);
 void	player_init(t_game *game);
 int		mini_maker(t_game *game);
-
 int		key_check(int keycode, t_game *game);
 void	move_down(t_game *game);
 void	move_left(t_game *game);

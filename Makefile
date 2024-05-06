@@ -6,7 +6,7 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 12:16:13 by machouba          #+#    #+#              #
-#    Updated: 2024/05/06 17:43:54 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/06 17:57:27 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ OBJECTS	= $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(MAKE) -C $(MLX_PATH)
-	$(MAKE) -C $(LIBFT_PATH)
+	$(MAKE) -sC $(MLX_PATH)
+	$(MAKE) -sC $(LIBFT_PATH)
 	cp $(LIB_MLX) $(NAME)
 	cp $(LIBFT) $(NAME)
 	@$(CC) $(CFLAGS) $(OBJECTS) $(LIB_MLX) $(XFLAGS) $(LIBFT) -o $(NAME)
