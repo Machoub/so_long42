@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 12:01:03 by machouba          #+#    #+#             */
+/*   Updated: 2024/05/06 12:20:15 by machouba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	init_img_nul(t_game *game)
@@ -33,5 +45,5 @@ bool	not_window(t_game *game)
 
 	screen_size = get_screen_size(game);
 	return (((game->plot.height * SPR_SZ) > screen_size.x)
-			|| ((game->plot.lenght * SPR_SZ) > screen_size.y));
+		|| ((game->plot.lenght * SPR_SZ) > screen_size.y));
 }

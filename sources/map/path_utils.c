@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   path_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 12:02:44 by machouba          #+#    #+#             */
+/*   Updated: 2024/05/06 12:04:22 by machouba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	is_valid_pos(int i, int j, int y, int x)
@@ -8,7 +20,7 @@ int	is_valid_pos(int i, int j, int y, int x)
 char	**alloc_map_mem(t_game *game, int y, int x)
 {
 	char	**new_map;
-	int				j;
+	int		j;
 
 	int (i) = 0;
 	new_map = (char **)malloc(sizeof(char *) * (game->plot.height + 1));
@@ -37,8 +49,8 @@ char	**alloc_map_mem(t_game *game, int y, int x)
 char	**copy_map(t_game *game, int y, int x)
 {
 	char	**ptr_map;
-	int				i;
-	int				j;
+	int		i;
+	int		j;
 
 	ptr_map = alloc_map_mem(game, y, x);
 	if (!ptr_map)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 12:07:42 by machouba          #+#    #+#             */
+/*   Updated: 2024/05/06 15:56:52 by machouba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	key_check(int keycode, t_game *game)
@@ -16,3 +28,20 @@ int	key_check(int keycode, t_game *game)
 	return (0);
 }
 
+void	print_moves(t_game *game)
+{
+	game->i.movements += 1;
+	if (game->plot.map[game->player.y / SPR_SZ][game->player.x / SPR_SZ]
+			== 'C')
+	{
+		game->plot.map[game->player.y / SPR_SZ][game->player.x
+				/ SPR_SZ] == '0';
+		game->i.collect--;
+	}
+	else if (game->plot.map[game->player.y / SPR_SZ][game->player.x / SPR_SZ]
+			== 'E' && game->i.collect == 0)
+	{
+		end_game("\nend", game, game_over);
+	}
+	return ;
+}

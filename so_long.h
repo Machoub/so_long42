@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/05 19:21:08 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:37:43 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,6 @@ void	free_map_test(char **map, int x);
 void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
 
-
 void	init_window(t_game *game);
 t_img	new_sprite(t_game *game, char *img_xpm);
 void	init_img(t_game *game);
@@ -161,6 +160,11 @@ void	init_img_nul(t_game *game);
 
 void	render_map(t_game *game);
 
-int	key_check(int keycode, t_game *game);
+int		key_check(int keycode, t_game *game);
+void	move_down(t_game *game);
+void	move_left(t_game *game);
+void	move_right(t_game *game);
+void	move_up(t_game *game);
+void	print_moves(t_game *game);
 
 #endif
