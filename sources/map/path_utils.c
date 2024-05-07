@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:02:44 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:22 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:56:22 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**alloc_map_mem(t_game *game, int y, int x)
 		}
 		i++;
 	}
-	new_map[y] == NULL;
+	new_map[y] = NULL;
 	return (new_map);
 }
 

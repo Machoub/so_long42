@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:07:42 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:52 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:57:36 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	print_moves(t_game *game)
 			== 'C')
 	{
 		game->plot.map[game->player.y / SPR_SZ][game->player.x
-				/ SPR_SZ] == '0';
+				/ SPR_SZ] = '0';
 		game->i.collect--;
 	}
 	else if (game->plot.map[game->player.y / SPR_SZ][game->player.x / SPR_SZ]

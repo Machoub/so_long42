@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:38 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:03 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:54:15 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	init_map(t_game *game, char *path)
 	fd = open_file(path);
 	read_map(game, fd);
 	game->plot.lenght = len_map(game->plot.map, game);
-	colse(fd);
+	close(fd);
 	return ;
 }

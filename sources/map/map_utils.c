@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:26 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:11 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:55:23 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	end_game2(char *msg, t_game *game)
 {
 	ft_printf("Error\n%s\n", msg);
-	destroy_img(game);
+	kill_image(game);
 	return ;
 }
 

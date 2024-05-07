@@ -6,11 +6,11 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:41 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:53:31 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:58:35 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	free_map(t_game *game)
 {
@@ -47,7 +47,7 @@ int	check_env(char **envp)
 		return (1);
 }
 
-void	destroy_img(t_game *game)
+void	kill_image(t_game *game)
 {
 	if (game)
 	{
@@ -81,7 +81,7 @@ void	end_game(char *message, t_game *game, enum e_state i)
 	else if (i == image_error)
 	{
 		ft_printf("Error\n%s\n", message);
-		destroy_img(game);
+		kill_image(game);
 		exit(1);
 	}
 	else if (i == map_char_error || i == design_map_error)
@@ -93,7 +93,7 @@ void	end_game(char *message, t_game *game, enum e_state i)
 	else if (i == event_end || i == game_over)
 	{
 		ft_printf("%s\n", message);
-		destroy_img(game);
+		kill_image(game);
 		exit(0);
 	}
 	end_game2(message, game);

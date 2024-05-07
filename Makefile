@@ -6,12 +6,12 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 12:16:13 by machouba          #+#    #+#              #
-#    Updated: 2024/05/06 17:57:27 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/07 14:07:06 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
-LIBFT_PATH	=	./libft
+LIBFT_PATH	=	libft
 LIBFT	=	$(LIBFT_PATH)/libft.a
 CC = cc
 CFLAGS	=	-Wall -Wextra -Werror -I$(LIBFT) 		

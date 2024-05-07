@@ -6,7 +6,7 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:02:54 by machouba          #+#    #+#              #
-#    Updated: 2024/05/03 11:36:19 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/07 10:06:25 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,6 @@ FTPRINTF_DIR	=	$(SRC_DIR)/ft_printf.c \
 					$(SRC_DIR)/ft_putunbr.c \
 
 GNL_DIR			=	$(SRC_DIR)/get_next_line.c \
-					$(SRC_DIR)/get_next_line_utils.c \
 # Concatenate all source files
 SRC 			= $(FTIS_DIR) $(FTMEM_DIR) $(FTPUT_DIR) $(FTTO_DIR) $(FTTO_DIR) $(FTSTR_DIR) $(FTLST_DIR) $(FTPRINTF_DIR) $(GNL_DIR)
 

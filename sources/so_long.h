@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:56:35 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:39:17 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@
 # define EXPOSURE_MASK 32768
 # define NO_EVENT_MASK 0
 
-# define WALL "./imaget_image_xpm/wall.xpm"
-# define FLOOR "./imaget_image_xpm/floor.xpm"
-# define ITEM "./imaget_image_xpm/item.xpm"
-# define DJ_OPEN "./imaget_image_xpm/dj_open.xpm"
-# define DJ_CLOSE "./imaget_image_xpm/dj_close.xpm"
-# define PLAYER "./imaget_image_xpm/player.xpm"
-# define PLAYER_LEFT "./imaget_image_xpm/player_left.xpm"
-# define PLAYER_RIGHT "./imaget_image_xpm/player_right.xpm"
-# define PLAYER_UP "./imaget_image_xpm/player_up.xpm"
+# define WALL "./img_xpm/wall.xpm"
+# define FLOOR "./img_xpm/floor.xpm"
+# define ITEM "./img_xpm/item.xpm"
+# define DJ_OPEN "./img_xpm/dj_open.xpm"
+# define DJ_CLOSE "./img_xpm/dj_close.xpm"
+# define PLAYER "./img_xpm/player.xpm"
+# define PLAYER_LEFT "./img_xpm/player_left.xpm"
+# define PLAYER_RIGHT "./img_xpm/player_right.xpm"
+# define PLAYER_UP "./img_xpm/player_up.xpm"
 
 typedef struct s_point
 {
@@ -123,7 +123,7 @@ enum	e_dir
 
 void	end_game(char *message, t_game *game, enum e_state i);
 int		check_env(char **envp);
-void	destroy_imaget_image(t_game *game);
+void	kill_image(t_game *game);
 void	free_map(t_game *game);
 void	init_map(t_game *game, char *path);
 bool	double_line(char *str, int i);
@@ -143,7 +143,7 @@ void	free_map_test(char **map, int x);
 void	check_path_collect(t_game *game, t_point coord);
 void	check_path_player(t_game *game, t_point coord);
 void	init_window(t_game *game);
-t_image	new_sprite(t_game *game, char *imaget_image_xpm);
+t_image	new_sprite(t_game *game, char *img_xpm);
 void	init_image(t_game *game);
 bool	not_window(t_game *game);
 t_point	get_screen_size(t_game *game);

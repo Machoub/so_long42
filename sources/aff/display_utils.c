@@ -6,13 +6,13 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:03 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 12:20:15 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:57:17 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	init_img_nul(t_game *game)
+void	init_image_nul(t_game *game)
 {
 	game->wall.ptr = NULL;
 	game->floor.ptr = NULL;

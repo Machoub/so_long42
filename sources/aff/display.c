@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:09 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:54:19 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:09:01 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	init_window(t_game *game)
 	}
 }
 
-void	init_img(t_game *game)
+void	init_image(t_game *game)
 {
-	init_img_nul(game);
+	init_image_nul(game);
 	game->wall = new_sprite(game, WALL);
 	game->floor = new_sprite(game, FLOOR);
 	game->item = new_sprite(game, ITEM);

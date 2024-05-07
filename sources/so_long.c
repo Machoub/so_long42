@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:16 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 16:58:27 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:09:14 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	init_game(t_game *game, char *map)
 	init_map(game, map);
 	parsing_map(game);
 	init_window(game);
-	init_img(game);
+	init_image(game);
 	render_map(game);
 	init_hook(game, KEY_PRESS, KEY_PRESS_MASK, key_check);
 	init_hook(game, DESTROY_NOTIF, NO_EVENT_MASK, red_cross);
