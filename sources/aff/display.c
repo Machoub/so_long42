@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:09 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/07 10:09:01 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:26:27 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_window(t_game *game)
 	else
 	{
 		game->windows_ptr = mlx_new_window(game->mlx_ptr,
-				(game->plot.height * SPR_SZ), (game->plot.lenght
+				(game->plot.lenght * SPR_SZ), (game->plot.height
 					* SPR_SZ), WINDOW_NAME);
 	}
 }

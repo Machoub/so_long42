@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:16 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/07 15:42:06 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:13:17 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,16 @@ static void	init_game(t_game *game, char *map)
 	mlx_loop(game->mlx_ptr);
 }
 
-static bool	valid_input(const char *argv)
+static int	valid_input(const char *argv)
 {
 	char	*str;
 
 	if (count_char(argv, '.') != 1)
-		return (false);
+		return (0);
 	str = ft_strrchr(argv, '.');
 	if (str)
 		return (ft_strcmp(str, ".ber") == 0);
-	return (false);
+	return (0);
 }
 
 int	main(int argc, char **argv, char **envp)

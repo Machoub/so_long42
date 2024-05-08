@@ -6,7 +6,7 @@
 #    By: machouba <machouba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:02:54 by machouba          #+#    #+#              #
-#    Updated: 2024/05/07 10:06:25 by machouba         ###   ########.fr        #
+#    Updated: 2024/05/08 11:52:06 by machouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ FTSTR_DIR		=	$(SRC_DIR)/ft_split.c \
 					$(SRC_DIR)/ft_strrchr.c \
 					$(SRC_DIR)/ft_strtrim.c \
 					$(SRC_DIR)/ft_strcmp.c \
+					$(SRC_DIR)/ft_strncmp.c \
 					$(SRC_DIR)/ft_strstr.c \
 					$(SRC_DIR)/ft_substr.c \
 					$(SRC_DIR)/ft_free_tab.c \

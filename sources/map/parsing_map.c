@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:35:00 by khaoulasard       #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:15 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:14:20 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	checker_map(t_game *game, int y, int x)
 {
 	if (!maps_walls(game, y, x))
 		end_game("Map invalid (walls)", game, design_map_error);
-	if (!valid_character(game, y, x))
+	else if (!valid_character(game, y, x))
 		end_game("Map invalid (character)", game, design_map_error);
 	return ;
 }

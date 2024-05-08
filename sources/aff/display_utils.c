@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:03 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/07 09:57:17 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:24:56 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ bool	not_window(t_game *game)
 	t_point	screen_size;
 
 	screen_size = get_screen_size(game);
-	return (((game->plot.height * SPR_SZ) > screen_size.x)
-		|| ((game->plot.lenght * SPR_SZ) > screen_size.y));
+	return (((game->plot.lenght * SPR_SZ) > screen_size.x)
+		|| ((game->plot.height * SPR_SZ) > screen_size.y));
 }

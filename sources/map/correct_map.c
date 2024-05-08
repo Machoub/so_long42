@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:08:01 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:48:06 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:16:29 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ bool	valid_character(t_game *game, int y, int x)
 
 bool	maps_walls(t_game *game, int y, int x)
 {
-	if ((game->plot.map[game->plot.height - 1][x] != 1)
-			|| (game->plot.map[0][x] != 1) || (game->plot.map[y][0] != 1)
-				|| (game->plot.map[y][game->plot.lenght - 1] != 1))
+	if ((game->plot.map[game->plot.height - 1][x] != '1')
+			|| (game->plot.map[0][x] != '1') || (game->plot.map[y][0] != '1')
+				|| (game->plot.map[y][game->plot.lenght - 1] != '1'))
 		return (false);
 	return (true);
 }

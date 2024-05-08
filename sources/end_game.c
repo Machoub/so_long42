@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:41 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/07 14:39:36 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:08:29 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_map(t_game *game)
 	while (game->plot.height > 0)
 	{
 		free(game->plot.map[game->plot.height - 1]);
-		game->plot.height++;
+		game->plot.height--;
 	}
 	free(game->plot.map);
 	return ;
