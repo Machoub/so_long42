@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/08 13:01:45 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:43:20 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct s_game
 	t_image		player_upper;
 	t_image		floor;
 	t_image		wall;
+	t_image		wall_dz;
 	t_image		item;
 	t_image		dj_open;
 	t_image		dj_close;
