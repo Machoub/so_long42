@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:13 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/09 14:22:29 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:41:58 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	player_init(t_game *game)
 {
 	t_point	point;
 
-	mlx_string_put(game->mlx_ptr, game->windows_ptr, 4,
-		((game->plot.height) * 60), 0xFFFFFF, "Move: 0");
+	mlx_string_put(game->mlx_ptr, game->windows_ptr, 40,
+		20, 0xFFFFFF, "Move: 0");
 	ft_putstr_fd("\rMove: ", 1);
 	ft_putnbr_fd(game->i.movements, 1);
 	point.y = 0;

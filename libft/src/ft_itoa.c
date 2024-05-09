@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:41:18 by machouba          #+#    #+#             */
-/*   Updated: 2023/11/21 12:53:46 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:40:24 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	toa = ft_calloc((len + 1), sizeof(char));
+	toa = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!toa)
 		return (NULL);
 	if (n < 0)

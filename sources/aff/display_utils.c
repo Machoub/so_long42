@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:03 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/09 14:29:21 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:49:21 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	print_map_string(t_game *game)
 	char	*string;
 
 	string = ft_itoa(game->i.movements);
-	mlx_string_put(game->mlx_ptr, game->windows_ptr, 4,
-		(game->plot.height * 60), 0xFFFFFF, "Move: ");
-	mlx_string_put(game->mlx_ptr, game->windows_ptr, 35,
-		(game->plot.height * 60), 0xFFFFFF, string);
+	mlx_string_put(game->mlx_ptr, game->windows_ptr, 40,
+		20, 0xFFFFFF, "Move: ");
+	mlx_string_put(game->mlx_ptr, game->windows_ptr, 75,
+		20, 0xFFFFFF, string);
 	free(string);
 	return ;
 }
