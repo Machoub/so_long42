@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:01:03 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/08 15:24:56 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:29:21 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@ void	init_image_nul(t_game *game)
 	game->player_left.ptr = NULL;
 	game->player_right.ptr = NULL;
 	game->player_upper.ptr = NULL;
+}
+
+void	print_map_string(t_game *game)
+{
+	char	*string;
+
+	string = ft_itoa(game->i.movements);
+	mlx_string_put(game->mlx_ptr, game->windows_ptr, 4,
+		(game->plot.height * 60), 0xFFFFFF, "Move: ");
+	mlx_string_put(game->mlx_ptr, game->windows_ptr, 35,
+		(game->plot.height * 60), 0xFFFFFF, string);
+	free(string);
+	return ;
 }
 
 int	red_cross(t_game *game)

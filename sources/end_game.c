@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:41 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/08 15:08:29 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:39:25 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,24 @@ int	check_env(char **envp)
 		return (1);
 }
 
+void	kill_image2(t_game *game)
+{
+	if (game)
+	{
+		if (game->player_left.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->player_left.ptr);
+		if (game->player_right.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->player_right.ptr);
+		if (game->player_upper.ptr)
+			mlx_destroy_image(game->mlx_ptr, game->player_upper.ptr);
+		mlx_destroy_window(game->mlx_ptr, game->windows_ptr);
+		mlx_destroy_display(game->mlx_ptr);
+		free_map(game);
+		free(game->mlx_ptr);
+	}
+	return ;
+}
+
 void	kill_image(t_game *game)
 {
 	if (game)
@@ -63,10 +81,7 @@ void	kill_image(t_game *game)
 			mlx_destroy_image(game->mlx_ptr, game->dj_open.ptr);
 		if (game->player.ptr)
 			mlx_destroy_image(game->mlx_ptr, game->player.ptr);
-		mlx_destroy_window(game->mlx_ptr, game->windows_ptr);
-		mlx_destroy_display(game->mlx_ptr);
-		free_map(game);
-		free(game->mlx_ptr);
+		kill_image2(game);
 	}
 	return ;
 }

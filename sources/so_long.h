@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:21 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/08 16:43:20 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:12:08 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ typedef struct s_game
 	t_image		player_upper;
 	t_image		floor;
 	t_image		wall;
-	t_image		wall_dz;
 	t_image		item;
 	t_image		dj_open;
 	t_image		dj_close;
@@ -159,5 +158,7 @@ void	move_left(t_game *game);
 void	move_right(t_game *game);
 void	move_up(t_game *game);
 void	print_moves(t_game *game);
+void	kill_image2(t_game *game);
+void	print_map_string(t_game *game);
 
 #endif

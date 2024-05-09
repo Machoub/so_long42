@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:51:38 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/08 14:57:55 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:29:07 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	read_map(t_game *game, int fd)
 		if (game->plot.line == NULL)
 			break ;
 		tmp = ft_strjoin(tmp, game->plot.line);
+		free(game->plot.line);
 		game->plot.height++;
 	}
 	game->i = counter(tmp, game);

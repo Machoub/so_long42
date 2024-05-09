@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:22:25 by machouba          #+#    #+#             */
-/*   Updated: 2023/12/18 12:41:12 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:30:28 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_free(char *str, char *buff)
 	char	*tmp;
 
 	tmp = ft_strjoin(str, buff);
-	free(str);
 	return (tmp);
 }
 

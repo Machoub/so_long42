@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:16:01 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:44 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:41:15 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	move_right(t_game *game)
 		game->player_right.ptr, game->player.x, game->player.y);
 	return ;
 }
-
