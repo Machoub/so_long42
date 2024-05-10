@@ -6,7 +6,7 @@
 /*   By: machouba <machouba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:05:48 by machouba          #+#    #+#             */
-/*   Updated: 2024/05/06 17:52:29 by machouba         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:22:24 by machouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,17 @@ static int	valid_path_collect(char **cpy_map, int i, int j, t_point coord)
 	if (is_valid_pos(i, j + 1, coord.y, coord.x) && (cpy_map[i][j
 			+ 1] == '0' || cpy_map[i][j + 1] == 'C' || cpy_map[i][j
 				+ 1] == 'P'))
-		path_ok += valid_path_player(cpy_map, i, j + 1, coord);
+		path_ok += valid_path_collect(cpy_map, i, j + 1, coord);
 	if (is_valid_pos(i, j - 1, coord.y, coord.x) && (cpy_map[i][j
 			- 1] == '0' || cpy_map[i][j - 1] == 'C' || cpy_map[i][j
 				- 1] == 'P'))
-		path_ok += valid_path_player(cpy_map, i, j - 1, coord);
+		path_ok += valid_path_collect(cpy_map, i, j - 1, coord);
 	if (is_valid_pos(i + 1, j, coord.y, coord.x) && (cpy_map[i + 1]
 			[j] == '0' || cpy_map[i + 1][j] == 'C' || cpy_map[i + 1][j] == 'P'))
-		path_ok += valid_path_player(cpy_map, i + 1, j, coord);
+		path_ok += valid_path_collect(cpy_map, i + 1, j, coord);
 	if (is_valid_pos(i - 1, j, coord.y, coord.x) && (cpy_map[i - 1]
 			[j] == '0' || cpy_map[i - 1][j] == 'C' || cpy_map[i - 1][j] == 'P'))
-		path_ok += valid_path_player(cpy_map, i - 1, j, coord);
+		path_ok += valid_path_collect(cpy_map, i - 1, j, coord);
 	return (path_ok);
 }
 
